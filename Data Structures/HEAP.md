@@ -14,9 +14,9 @@ The normal approach is to do a bottom up scan of the array, and perform a sift-d
 - siftDown swaps a node that is too small with its largest child (thereby moving it down) until it is at least as large as both nodes below it.
   + ( Step 1 ) The first n/2 elements go on the bottom row of the heap. h=0, so heapify is not needed.
 
-  + ( Step 2 ) The next n/22 elements go on the row 1 up from the bottom. h=1, heapify filters 1 level down.
+  + ( Step 2 ) The next n/2*2 elements go on the row 1 up from the bottom. h=1, heapify filters 1 level down.
 
-  + ( Step i ) The next n/2i elements go in row i up from the bottom. h=i, heapify filters i levels down.
+  + ( Step i ) The next n/2*i elements go in row i up from the bottom. h=i, heapify filters i levels down.
 
   + ( Step log(n) ) The last n/2log2(n) = 1 element goes in row log(n) up from the bottom. h=log(n), heapify filters log(n) levels down.
 
@@ -33,7 +33,7 @@ The normal approach is to do a bottom up scan of the array, and perform a sift-d
 > - Last non-leaf node = parent of last-node.
 > - or, Last non-leaf node = parent of node at (n-1)th index.
 > - or, Last non-leaf node = Node at index ((n-1) - 1)/2.
-> -                        = (n/2) - 1.
+>                         = (n/2) - 1.
 
 
 ```cpp

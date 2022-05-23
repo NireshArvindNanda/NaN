@@ -16,3 +16,13 @@
 * Use ```<<``` to get powers of 2 and ```&``` with the result
 * To loop through the number based on its bit size, use ```(int)log2(n)+1```
 
+```
+int countBitsFlip(int a, int b){
+        
+        int c = a^b,cnt=0;
+        for(int i=0;i<(int)log2(c)+1;i++){
+            if(1<<i & c)cnt++;
+        }
+        return cnt;
+    }
+```

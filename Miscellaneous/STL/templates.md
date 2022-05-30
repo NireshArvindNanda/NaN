@@ -1,24 +1,13 @@
-
-# The C++ Standard Template Library (STL)
-
-It is a set of C++ template classes to provide common programming data structures and functions.
-It is a generalized library and so, its components are parameterized.
-
-# The C++ Standard Template Library (STL)
-
-It is a set of C++ template classes to provide common programming data structures and functions.
-It is a generalized library and so, its components are parameterized.
-
-## Templates in C++
+# Templates in C++
 
 The idea of templates is to pass data type as a parameter so that we don’t need to write the same code for different data types.
 C++ adds two new keywords to support templates: **template** and **typename**. The second keyword can always be replaced by keyword **class**.
 
-### Working of templates
+## Working of templates
 
 Templates are expanded at compiler time. This is like macros. The difference is, the compiler does type checking before template expansion. The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of same function/class. 
 
-#### Generics
+### Generics
 Generics is the idea to allow type (Integer, String, … etc and user-defined types) to be a parameter to methods, classes and interfaces.
 The method of Generic Programming is implemented to increase the efficiency of the code. Generic Programming enables the programmer to write a general algorithm which will work with all data types. It eliminates the need to create different algorithms if the data type is an integer, string or a character.
 
@@ -27,7 +16,7 @@ The advantages of Generic Programming are
 - Avoid Function Overloading
 - Once written it can be used for multiple times and cases.
 
-#### Function Templates
+### Function Templates
 We write a generic function that can be used for different data types.
 ```cpp
 template <typename T> T myMax(T x, T y)
@@ -52,7 +41,7 @@ int n = sizeof(a) / sizeof(a[0]);
 bubbleSort<int>(a, n);
 ```
 
-#### Class Templates
+### Class Templates
 Like function templates, class templates are useful when a class defines something that is independent of the data type. Can be useful for classes like LinkedList, BinaryTree, Stack, Queue, Array, etc.
 ```cpp
 template <typename T> class Array {
@@ -81,11 +70,11 @@ template <class T, class U = char> class A {
 };
 ```
 
-#### What is the difference between function overloading and templates? 
+### What is the difference between function overloading and templates? 
 Both function overloading and templates are examples of polymorphism feature of OOP. Function overloading is used when multiple functions do similar operations, templates are used when multiple functions do identical operations.
 
-#### Templates and Static variables in C++
-###### Function templates and static variables:
+### Templates and Static variables in C++
+##### Function templates and static variables:
 Each instantiation of function template has its own copy of local static variables.
 ```cpp
 template <typename T>
@@ -105,7 +94,7 @@ cout << endl;
 fun<double>(1.1); // prints 11
 cout << endl;
 ```
-##### Class templates and static variables:
+#### Class templates and static variables:
 The rule for class templates is same as function templates
 Each instantiation of class template has its own copy of member static variables
 
@@ -140,7 +129,7 @@ int main()
   cout << Test<double>::count << endl; //prints 1
 }
 ```
-#### Template Specialization in C++
+### Template Specialization in C++
 It is possible in C++ to get a special behavior for a particular data type. This is called template specialization. 
 
 ```cpp
@@ -186,11 +175,11 @@ public:
 };
 ```
 
-#### How does template specialization work? 
+### How does template specialization work? 
 When we write any template based function or class, compiler creates a copy of that function/class whenever compiler sees that being used for a new data type or new set of data types(in case of multiple template arguments). 
 If a specialized version is present, compiler first checks with the specialized version and then the main template. Compiler first checks with the most specialized version by matching the passed parameter with the data type(s) specified in a specialized version.
 
-#### Template MetaProgramming
+### Template MetaProgramming
 
 ```cpp
 #include <iostream>
@@ -218,7 +207,7 @@ calculation is done at compile time. So, it is compiler that calculates 2^8. To 
 - Like other const expressions, values of enumeration constants are evaluated at compile time. 
 - When compiler sees a new argument to a template, compiler creates a new instance of the template.
 
-####  Nontype parameters to template
+###  Nontype parameters to template
 We can pass non-type arguments to templates. Non-type parameters are mainly used for specifying max or min values or any other constant value for a particular instance of a template. The important thing to note about non-type parameters is, they must be const. The compiler must know the value of non-type parameters at compile time. Because the compiler needs to create functions/classes for a specified non-type value at compile time. In below program, if we replace 10000 with a variable, we get a compiler error.
 
 ```cpp

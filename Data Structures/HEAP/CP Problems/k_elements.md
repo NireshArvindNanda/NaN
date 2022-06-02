@@ -10,6 +10,8 @@
   * whenever there is top k or least k asked think heaps first 
   * if heaps cannot optimize the problem go with the usual way
   * use a max heap to return the k largest element
+
+
   
 * **Code**
 
@@ -38,6 +40,7 @@ class Solution
 * **Data structures used**
 
   * priority queue
+  * To create a min priority_queue ```priority_queue< int,vector<int>,greater<int> > pq```
   
 * **Library functions available**
 

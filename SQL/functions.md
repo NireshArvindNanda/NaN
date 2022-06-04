@@ -39,3 +39,10 @@ the format is ```substring(string,start,length)```
 
 ```SELECT NAME FROM STUDENTS WHERE Marks > 75 ORDER BY RIGHT(NAME, 3), ID ASC;```
 
+## the case of NULL
+
+[https://leetcode.com/problems/find-customer-referee/submissions/](https://leetcode.com/problems/find-customer-referee/submissions/)
+
+* in case your query doesn't work to get the results, make sure to include the ```NULL``` values as well
+
+```select name from customer where not referee_id = 2 or referee_id is NULL```

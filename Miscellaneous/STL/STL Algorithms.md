@@ -20,8 +20,8 @@ This function internally uses IntroSort. In more details it is implemented using
 
 **sort(startaddress, endaddress)**
 
-- startaddress: the address of the first element of the array
-- endaddress: the address of the next contiguous location of the last element of the array.
+- **startaddress:** the address of the first element of the array
+- **endaddress:** the address of the next contiguous location of the last element of the array.
 - So actually sort() sorts in the range of [startaddress,endaddress)
 
 ```cpp
@@ -34,10 +34,10 @@ sort(a, a + asize);
 
 **binary_search(startaddress, endaddress, valuetofind)**
 
-- startaddress: the address of the first element of the array.
-- endaddress: the address of the next contiguous location of the last element of the array.
-- valuetofind: the target value which we have to search for.
-- returns true if an element equal to valuetofind is found, else false.
+- **startaddress:** the address of the first element of the array.
+- **endaddress:** the address of the next contiguous location of the last element of the array.
+- **valuetofind:** the target value which we have to search for.
+- **returns** true if an element equal to valuetofind is found, else false.
 
 ```cpp
 int a[] = { 1, 5, 8, 9, 6, 7, 3, 4, 2, 0 };
@@ -48,8 +48,8 @@ binary_search(a, a + 10, 10);
 
 ### Other useful Algorithms
 
-- reverse(first_iterator, last_iterator)
-- *max_element (first_iterator, last_iterator)
+- **reverse(first_iterator, last_iterator)**
+- ***max_element (first_iterator, last_iterator)**
 It returns a pointer to the largest element 
 in the range, and in case if there are more than one such element,
 then it points to the first one.
@@ -75,20 +75,20 @@ int main()
     return 0;
 }
 ```
-- *min_element (first_iterator, last_iterator)
-- accumulate(first_iterator, last_iterator, initial value of sum) – Does the summation of vector elements
-- count(first_iterator, last_iterator,x) – To count the occurrences of x in vector.
-- find(first_iterator, last_iterator, x) – Returns an iterator to the first occurrence of x in vector and points to last address ((name_of_vector).end()) if element is not present.
-- lower_bound(first_iterator, last_iterator, x) – returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘x’.
-- upper_bound(first_iterator, last_iterator, x) – returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘x’.
+- ***min_element (first_iterator, last_iterator)**
+- **accumulate(first_iterator, last_iterator, initial value of sum)** – Does the summation of vector elements
+- **count(first_iterator, last_iterator,x)** – To count the occurrences of x in vector.
+- **find(first_iterator, last_iterator, x)** – Returns an iterator to the first occurrence of x in vector and points to last address ((name_of_vector).end()) if element is not present.
+- **lower_bound(first_iterator, last_iterator, x)** – returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘x’.
+- **upper_bound(first_iterator, last_iterator, x)** – returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘x’.
 
 ```cpp
 // To count the number of occurences of x
 upper_bound(first_iterator, last_iterator, x) - lower_bound(first_iterator, last_iterator, x);
 ```
 
-- arr.erase(position to be deleted) – This erases selected element in vector and shifts and resizes the vector elements accordingly.
-- arr.erase(unique(arr.begin(),arr.end()),arr.end()) – This erases the duplicate occurrences in sorted vector in a single line.
+- **arr.erase(position to be deleted)** – This erases selected element in vector and shifts and resizes the vector elements accordingly.
+- **arr.erase(unique(arr.begin(),arr.end()),arr.end())** – This erases the duplicate occurrences in sorted vector in a single line.
 
 **std::unique** is used to remove duplicates of any element present consecutively in a range[first, last). It performs this task for all the sub-groups present in the range having the same element present consecutively.
 
@@ -98,9 +98,9 @@ upper_bound(first_iterator, last_iterator, x) - lower_bound(first_iterator, last
 > 
     ForwardIterator unique (ForwardIterator first, ForwardIterator last);
 
-+ first: Forward iterator to the first element in the container.
-+ last: forward iterator to the last element in the container.
-+ Return Value: It returns an iterator to the element that follows the last element not removed.
++ **first:** Forward iterator to the first element in the container.
++ **last:** forward iterator to the last element in the container.
++ **Return Value:** It returns an iterator to the element that follows the last element not removed.
 
 **It only removes repeated duplicates**
 1,1,2,2,1,1,1 -> 1,2,1,$,$,$,$
@@ -137,39 +137,47 @@ count = std::distance(v.begin(),std::unique(v.begin(), v.end()));
 cout << "Total no. of unique elements = " << count;
 ```
 
-- vector::resize()
+### vector::resize()
 The function alters the container’s content in actual by inserting or deleting the elements from it. It happens so,
 
 + If the given value of n is less than the size at present then extra elements are demolished.
 + If n is more than current size of container then upcoming elements are appended at the end of the vector.
 
-vectorname.resize(int n, int val)
+>
+    vectorname.resize(int n, int val)
 + n - it is new container size, expressed in number of elements.
 + val - if this parameter is specified then new elements are initialized with this value.
 + no return value
 
-- next_permutation(first_iterator, last_iterator) – This modified the vector to its next permutation.
-- prev_permutation(first_iterator, last_iterator) – This modified the vector to its previous permutation. 
-- distance(first_iterator,desired_position) – It returns the distance of desired position from the first iterator.This function is very useful while finding the index. 
+### next_permutation(first_iterator, last_iterator)
+This modified the vector to its next permutation.
+
+### prev_permutation(first_iterator, last_iterator)
+This modified the vector to its previous permutation. 
+
+### distance(first_iterator,desired_position)
+It returns the distance of desired position from the first iterator.This function is very useful while finding the index. 
 
 ```cpp
 cout << "Max element at index : ";
 cout << distance(vect.begin(), max_element(vect.begin(), vect.end()));
 ```
-- bool all_of (InputIterator first, InputIterator last, UnaryPredicate pred);
+### bool all_of (InputIterator first, InputIterator last, UnaryPredicate pred);
 ```cpp
 if (std::all_of(v.cbegin(), v.cend(), [](int i){ return i % 2 == 0; })) 
     std::cout << "All numbers are even\n";
 ```
 
-- any_of, none_of
-- copy_n
+- **any_of**
+- **none_of**
+
+### copy_n
 ```cpp
     int ar[6] =  {1, 2, 3, 4, 5, 6};
     int ar1[6];
     copy_n(ar, 6, ar1);
 ```
-- iota
+### iota
 This function is used to assign continuous values to array. This function accepts 3 arguments, the array name, size, and the starting number.
 ```cpp
 int ar[6] =  {0};
@@ -177,7 +185,7 @@ iota(ar, ar+6, 20);
 // 20 21 22 23 24 25
 ```
 
-- for_each
+### for_each
 ```cpp
 // helper function 1
 void printx2(int a)
@@ -200,13 +208,13 @@ for_each(vect.begin(), vect.end(), printx2);
 for_each(arr1, arr1+6, ob1);
 ```
 
-- Using Lambdas:
+### Using Lambdas
 With the introduction of lambda functions, one can easily used to make the whole thing inline which is very compact and useful for people looking for using functional programming.
 
 ```cpp
 for_each(vec.begin(), vec.end(), [](int a) { cout << a << " " << endl; });
 ```
-- InputIterator find (InputIterator first, InputIterator last, const T& val)
+### InputIterator find (InputIterator first, InputIterator last, const T& val)
 ```cpp
 // Element to be searched
 int ser = 30;
@@ -216,35 +224,35 @@ if (it != vec.end())
 
 index = it - vec.begin();
 ```
-- find_if
+### find_if
 Returns an iterator to the first element in the range [first, last) for which pred(Unary Function) returns true. If no such element is found, the function returns last.
 
 > 
     InputIterator find_if (InputIterator first, InputIterator last, UnaryPredicate pred);
 
-- find_if_not
+### find_if_not
 
 Returns an iterator to the first element in the range [first, last) for which pred(Unary Function) returns false.
 
-- find_end
-It is the reverse variant of std::search.
-You are not alone if you are thinking why it is called std::find_end and not std::search_end
+### find_end
+- It is the reverse variant of **std::search.**
+- You are not alone if you are thinking why it is called **std::find_end** and not **std::search_end**
 
 >  
     ForwardIterator1 find_end (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2, BinaryPredicate pred);
 
-+ first1: Forward iterator to the first element in the first range.
-+ last1: Forward iterator to the last element in the first range.
-+ first2: Forward iterator to the first element in the second range.
-+ last2: Forward iterator to the last element in the second range.
-+ pred: by default it is ==. Binary function that accepts two elements as arguments (one of each of the two sequences, in the same order), and returns a value convertible to bool. The value returned indicates whether the elements are considered to match in the context of this function.
++ **first1:** Forward iterator to the first element in the first range.
++ **last1:** Forward iterator to the last element in the first range.
++ **first2:** Forward iterator to the first element in the second range.
++ **last2:** Forward iterator to the last element in the second range.
++ **pred:** by default it is ==. Binary function that accepts two elements as arguments (one of each of the two sequences, in the same order), and returns a value convertible to bool. The value returned indicates whether the elements are considered to match in the context of this function.
 
-Return Value: It returns an iterator to the first element of 
+**Return Value:** It returns an iterator to the first element of 
 the last occurrence of [first2,last2) in [first1,last1).
 If the sequence is not found or [first2,last2) is empty,
 the function returns last1.
 
-- std::find_first_of 
+### std::find_first_of 
 is used to compare elements between two containers. It compares all the elements in a range [first1,last1) with the elements in the range [first2,last2), and if any of the elements present in the second range is found in the first one , then it returns an iterator to that element.
 
 > 
@@ -273,7 +281,7 @@ auto ip2 = std::find_first_of(ip,s1.end(),s2.begin(),s2.end());
 + **Time Complexity: O(n1 * n2)**, where, n1 is the number of elements in the first range and n2 is the number of elements in the second range.
 
 
-- std::greater
+### std::greater
 is a functional object which is used for performing comparisons. It is defined as a Function object class for the greater-than inequality comparison.
 
 > 
@@ -286,32 +294,29 @@ is a functional object which is used for performing comparisons. It is defined a
 These member types are obtained via publicly inheriting std::binary_function<T, T, bool>.
 
 #### Member functions:
-+ operator() - checks whether the first argument is greater than the second
++ **operator()** - checks whether the first argument is greater than the second
 + it returns lhs > rhs.
 
 > 
     std::less, std::greater, std::less_equal, and std::greater_equal
 
-- std::adjacent_find
+### std::adjacent_find
 
 > 
     ForwardIt adjacent_find( ForwardIt first, ForwardIt last, BinaryPredicate p );
-+ first, last : the range of elements to examine
-+ p :  binary predicate which returns true if the elements should be treated as equal. 
++ **first, last :** the range of elements to examine
++ **p :**  binary predicate which returns true if the elements should be treated as equal. 
 
-+ Return value :
-An iterator to the first of the first pair of identical elements, '
-that is, the first iterator it such that *it == *(it+1) for the first 
-version with no pred function or p(*it, *(it + 1)) == true for the second version with BinaryPredicate.
-If no such elements are found, last is returned.
++ **Return value :** An iterator to the first of the first pair of identical elements, that is, the first iterator it such that *it == *(it+1) for the first version with no pred function or p(*it, *(it + 1)) == true for the second version with BinaryPredicate.
++ If no such elements are found, **last** is returned.
 
-- std::count() 
+### std::count() 
 returns number of occurrences of an element in a given range. Returns the number of elements in the range [first,last) that compare equal to val.
 >
     int count(Iterator first, Iterator last, T &val)
 **Complexity** It’s order of complexity O(n). Compares once each element with the particular value.
 
-- std::count_if() 
+### std::count_if() 
 >
     template <class InputT, class UnaryPredicate>
     typename iterator_traits <InputT> :: difference_type
@@ -319,17 +324,17 @@ returns number of occurrences of an element in a given range. Returns the number
 
 + type of the predicate should be same as the type of the container. 
 
-- std::mismatch()
+### std::mismatch()
 >
     mismatch( start_iter1, end_iter1, start_iter2 ) 
 This version of mismatch only test for inequality.
 Here, there are 3 arguments,
 
-start_iter1: Beginning iterator to 1st container
+**start_iter1:** Beginning iterator to 1st container
 
-end_iter1: Last iterator to 1st container
+**end_iter1:** Last iterator to 1st container
 
-start_iter2: Starting iterator to the 2nd iterator from where comparison is desired to begin.
+**start_iter2:** Starting iterator to the 2nd iterator from where comparison is desired to begin.
 
 This function returns the 1st mismatch pair pointer, first element pointing to position of first mismatch element of 1st container, second element pointing to position of first mismatch element of 2nd container. If no mismatch is found, 1st element points to position after last element of 1st container and 2nd points to corresponding position in 2nd container
 
@@ -347,7 +352,7 @@ cout << *mispair.first << endl;
 
 + returns first pair where comparator returns false, i.e a mismatch
 
-- std::equal() 
+### std::equal() 
 helps to compares the elements within the range [first_1,last_1) with those within range beginning at first_2.
 >
     template bool equal (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2)
@@ -360,17 +365,17 @@ helps to compares the elements within the range [first_1,last_1) with those with
 >
     template  constexpr const T& max (const T& a, const T& b);
 
-- is_permutation
+### is_permutation
 > 
     template <class ForwardIterator1, class ForwardIterator2 >
     bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1,
     ForwardIterator2 first2);
 
-true : if all the elements in range [first1, last1) 
+**true :** if all the elements in range [first1, last1) 
 compare equal to those of the range
 starting at first2 in any order.
 
-false : Any element missing or exceeding.
+**false :** Any element missing or exceeding.
 
 + Check whether two strings are anagram of each other
 
@@ -391,29 +396,25 @@ N
 N
  is std::distance(first1, last1).
 
-- search_n
+### search_n
 >
     ForwardIterator search_n (ForwardIterator first, ForwardIterator last, Size count, const T& val);
 
-first:
-Forward iterator to beginning of the container to be searched into.
++ **first:** Forward iterator to beginning of the container to be searched into.
 
-last: 
-Forward iterator to end of the container to be searched into.
++ **last:** Forward iterator to end of the container to be searched into.
 
-count: 
-Minimum number of successive elements to match.
-Size shall be (convertible to) an integral type.
++ **count:** Minimum number of successive elements to match. Size shall be (convertible to) an integral type.
 
-val: Individual value to be compared.
++ **val:** Individual value to be compared.
 
-Returns: 
-It returns an iterator to the first element of the sequence.
-If no such sequence is found, the function returns last.
++ **Returns:**  It returns an iterator to the first element of the sequence.
+
+* If no such sequence is found, the function returns **last**.
 
 > 
     ForwardIterator search_n ( ForwardIterator first, ForwardIterator last, Size count, const T& val, BinaryPredicate pred );
 
-pred: **Binary** function that accepts two arguments 
+**pred:** **Binary function** that accepts two arguments 
 (one element from the sequence as first, and val as second), and returns a value convertible to bool. The value returned indicates whether 
 the element is considered a match in the context of this function.

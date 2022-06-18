@@ -1,4 +1,4 @@
-# Inserting a node at the end of the 
+# Inserting a node at the end of the linked list
 
 https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem?isFullScreen=true
 

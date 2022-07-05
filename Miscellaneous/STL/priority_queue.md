@@ -35,3 +35,32 @@ Syntax:
 ```cpp
 priority_queue<int> pq1(arr, arr+3);     // creating priority queue using array
 ```
+
+## Heap on another container range:
+>
+    template< class RandomIt, class Compare > 
+    void make_heap( RandomIt first, RandomIt last, Compare comp );
+
+#### Complexity
+At most 3*std::distance[first, last) comparisons.
+
+```cpp
+std::make_heap(v.begin(), v.end());
+
+// pop_heap only pushes to end
+std::pop_heap(v.begin(), v.end());
+auto top = v.back();
+v.pop_back();
+```
+
+- **is_heap -** checks if the given range is a max heap
+
+- **is_heap_until -** finds the largest subrange that is a max heap
+
+- **push_heap -** adds an element to a max heap
+
+- **pop_heap -** removes the largest element from a max heap
+
+- **sort_heap -** turns a max heap into a range of elements sorted in ascending order
+
+- **ranges::make_heap -** creates a max heap out of a range of elements
